@@ -1,0 +1,7 @@
+{
+  "name": "rev-react",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
