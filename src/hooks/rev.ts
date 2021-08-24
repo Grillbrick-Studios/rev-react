@@ -1,14 +1,20 @@
 import { useState } from "react";
+import { Bible, Commentary, Appendices } from "../models";
 
-const URL =
-  "https://www.revisedenglishversion.com/jsonrevexport.php?permission=yUp&autorun=1&what=bible";
-
-export function useBible() {
-  const [bible, setBible] = useState({});
-  console.log(bible);
-  console.log("test");
-  fetch(URL)
-    .then((res) => res.json())
-    .then((b) => setBible(b.REV_Bible));
+export function useBible(): Bible | undefined {
+  const [bible, setBible] = useState<Bible>();
+  Bible.onReady().then((b) => setBible(b));
   return bible;
+}
+
+export function useCommentary(): Commentary | undefined {
+  const [commentary, setCommentary] = useState<Commentary>();
+  Commentary.onReady().then((b) => setCommentary(b));
+  return commentary;
+}
+
+export function useAppendices(): Appendices | undefined {
+  const [appendices, setAppendices] = useState<Appendices>();
+  Appendices.onReady().then((b) => setAppendices(b));
+  return appendices;
 }

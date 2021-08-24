@@ -7,13 +7,11 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { useState } from "react";
-import { useBible } from "../hooks";
-//import ExploreContainer from "../components/ExploreContainer";
+import { ChapterView } from "../components";
 import "./Home.css";
 
 const Home: React.FC = () => {
   const [searchText, setSearchText] = useState("");
-  const bible = useBible();
   return (
     <IonPage>
       <IonHeader>
@@ -37,7 +35,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Welcome to the REV</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div>{JSON.stringify(bible)}</div>
+        <ChapterView book="Genesis" chapter={1} />
       </IonContent>
     </IonPage>
   );
