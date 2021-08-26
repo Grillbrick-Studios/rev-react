@@ -81,6 +81,6 @@ export class Verse implements iVerse {
     result = result?.replace(/\]\]/g, "</em>");
     result = result?.replace(/\[/g, "<em style='font-weight: lighter;'>");
     result = result?.replace(/\]/g, "</em>");
-    return `${this.book} ${this.chapter}:${this.verse} ${result}`;
+    return `<sup>${this.verse}</sup> ${result}`;
   }
 }

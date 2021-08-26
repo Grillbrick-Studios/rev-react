@@ -1,4 +1,5 @@
 import { useBible } from "../hooks";
+import "./ChapterView.css"
 
 interface ChapterViewProps {
   book?: string;
@@ -12,8 +13,8 @@ export const ChapterView: React.FC<ChapterViewProps> = ({ book, chapter }) => {
   if (chapter) bible.selectChapter(chapter);
 
   return (
-    <div className="container">
-      <strong>{book}</strong>
+    <div className="chapter-view-container">
+      <h1>{book}</h1>
       <p
         dangerouslySetInnerHTML={{
           __html: bible.ls().join("\n"),

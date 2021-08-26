@@ -112,8 +112,8 @@ export class Bible implements iData<iVerse> {
         this.selectedVerse
       ).map((v) => v.html());
     if (this.selectedChapter && this.selectedBook)
-      return this.getVerseNumbers(this.selectedBook, this.selectedChapter).map(
-        (v) => v.toString()
+      return this.getVerses(this.selectedBook, this.selectedChapter).map((v) =>
+        v.html()
       );
     if (this.selectedBook)
       return this.getChapters(this.selectedBook).map((v) => v.toString());
